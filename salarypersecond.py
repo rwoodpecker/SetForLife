@@ -2,7 +2,6 @@ import time
 
 annualSalary = 100000 # enter your annual post-tax salary here
 salaryPerSecond = annualSalary/220/7.5/60/60
-
 stime = 0
 
 while True:
