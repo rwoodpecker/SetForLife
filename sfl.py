@@ -1,5 +1,5 @@
 """
-A tool to help calculate approximately how much you get paid in real terms over 20 years when you win SET FOR LIFE.
+A tool to help calculate approximately how much you get paid in real terms over 20 years when you win Set for Life.
 
 Set for Life is a lottery with a jackpot that pays you out A$20,000 per month for 20 years.
 
