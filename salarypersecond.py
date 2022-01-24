@@ -1,11 +1,10 @@
 """
-Calculates salary earnt per second of work. Enter your annual post-tax below.
+Calculates salary earned per second of work. Enter your annual post-tax salary below.
 """
 
 import time
 
-# enter your annual post-tax salary here
-annual_salary = 100000 
+annual_salary = 100000 # enter your annual post-tax salary here
 salary_per_second = annual_salary/220/7.5/60/60
 start_time = 0
 
