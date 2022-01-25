@@ -10,8 +10,8 @@ annual_returns = 0.0872
 
 while True:
     try:
-        net_income = Decimal(input("My after-tax income is: "))
-        spend = Decimal(input("How much money am I spending if I spend this much on something: "))
+        net_income = Decimal(input("My after-tax income is: $"))
+        spend = Decimal(input("How much money am I spending if I spend this much on something: $"))
         times_per_year = Decimal(input("This many times per year: "))
         years = int(input("Over this many years: "))
     except InvalidOperation or ValueError:
