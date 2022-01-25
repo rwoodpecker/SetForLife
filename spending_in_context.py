@@ -10,6 +10,7 @@ annual_returns = 0.0872
 
 while True:
     try:
+        net_income = Decimal(input("My after-tax income is: "))
         spend = Decimal(input("How much money am I spending if I spend this much on something: "))
         times_per_year = Decimal(input("This many times per year: "))
         years = int(input("Over this many years: "))
@@ -23,3 +24,5 @@ future_spend = 0
 for i in range(1, years + 1):
     future_spend = (future_spend + yearly_spend) * Decimal((1+annual_returns))
     print(f"${round(future_spend, 2)} in {i} years (${spend * times_per_year * i} without growth)")
+
+print(f"You could buy an extra {future_spend/net_income:.2f} years off work in {years} years if you just stop buying that!")
