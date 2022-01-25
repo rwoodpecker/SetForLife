@@ -22,4 +22,4 @@ future_spend = 0
 
 for i in range(1, years + 1):
     future_spend = (future_spend + yearly_spend) * Decimal((1+annual_returns))
-    print(f"${round(future_spend, 2)} in {i} years ({spend * times_per_year * i} without growth)")
+    print(f"${round(future_spend, 2)} in {i} years (${spend * times_per_year * i} without growth)")
