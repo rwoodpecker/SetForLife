@@ -5,10 +5,10 @@ Men: BMR = 88.362 + (13.397 x weight in kg) + (4.799 x height in cm) – (5.677 
 import time
 from decimal import Decimal
 
-WEIGHT = 86 # cm
+WEIGHT = 86 # kg
 HEIGHT = 190 # cm
 AGE = 27 # years
-GROCERY_BILL_PER_WEEK = 122
+GROCERY_BILL_PER_WEEK = 122 # dollars
 
 grocery_bill_per_second = Decimal(GROCERY_BILL_PER_WEEK/7/24/60/60)
 
