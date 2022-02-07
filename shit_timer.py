@@ -13,7 +13,6 @@ Path(file_name).touch(exist_ok=True)
 with open(file_name, 'r+') as file:
     if not file.read():
         total_time = 0
-        file.write(str(total_time))
         file.close
     else:
         file.seek(0)
@@ -24,7 +23,7 @@ try:
         time.sleep(1)
         total_time += 1
         this_time += 1
-        print(f" Earnings during this shit: {time.strftime('%H:%M:%S', time.gmtime(this_time))} ${salary_per_second*this_time:.2f}. Total shit earnings: {time.strftime('%H:%M:%S', time.gmtime(total_time))} ${salary_per_second*total_time:.2f}", end="\r")
+        print(f" Earnings during this shit: {time.strftime('%H:%M:%S', time.gmtime(this_time))} ${salary_per_second*this_time:.2f}. Total shit earnings: {time.strftime('%H:%M:%S', time.gmtime(total_time))} ${salary_per_second*total_time:.2f}.", end="\r")
 except KeyboardInterrupt:
     pass
     with open(file_name, 'w') as file:
