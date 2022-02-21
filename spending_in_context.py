@@ -35,6 +35,6 @@ if regular in REGULAR_OPTIONS:
 
 else:
     for i in range(1, years + 1):
-        spend = Decimal(spend * Decimal(1.07))
+        spend = Decimal(spend * Decimal(1 + annual_returns))
     print(f"Total cost is ${spend:.2f}")
     print(f"You could buy an extra {spend/net_income:.2f} years off work ({spend*229/net_income:.2f} working days) in {years} years if you just stop buying that!")
