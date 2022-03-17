@@ -21,7 +21,6 @@ def day_progress():
     work_start_date_time = datetime.combine(today, datetime.min.time()) + timedelta(
         hours=WORK_START_HOUR
     )
-    work_endtime = work_start_date_time + timedelta(seconds=SECONDS_IN_WORK_DAY)
 
     # Print how far through the day you are in %.
     while True:
