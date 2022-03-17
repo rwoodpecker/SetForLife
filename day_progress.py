@@ -44,7 +44,7 @@ def notify_and_exit():
         os.system(
             'osascript -e \'display notification "Work day over" with title "Work day over"\''
         )
-    if platform.system == "Linux":
+    elif platform.system == "Linux":
         os.system("notify-send 'Work day over'")
     print("\nWORK DAY OVER!!!\n")
     sys.exit()
