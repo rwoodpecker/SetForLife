@@ -12,6 +12,7 @@ import sys
 def day_progress():
     # Constants
     # Change this if your work day is longer or shorter than 8 hours
+    # Use 24 hr time for WORK_START_HOUR (e.g. if you start at 1pm, write '13')
     WORK_START_HOUR = 8
     HOURS_IN_WORK_DAY = 8
     SECONDS_IN_WORK_DAY = HOURS_IN_WORK_DAY * 60 * 60
@@ -29,6 +30,9 @@ def day_progress():
             * 100
             / SECONDS_IN_WORK_DAY
         )
+        if progress < 0 or datetime.now() < work_start_date_time:
+            print("\nYour work day hasn't started yet. Check your constants.\n")
+            sys.exit()
         if progress >= 100:
             notify_and_exit()
         print(
