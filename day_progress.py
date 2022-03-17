@@ -1,5 +1,5 @@
 """
-Calculate how many minutes through the day you are
+Calculate what % through the work day you are
 """
 
 from datetime import datetime, date, timedelta
