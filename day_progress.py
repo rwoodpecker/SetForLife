@@ -6,6 +6,7 @@ from datetime import datetime, date, timedelta
 import time
 import platform
 import os
+import sys
 
 # Constants
 # Change this if your work day is longer or shorter than 8 hours
@@ -22,13 +23,8 @@ work_endtime = work_start_date_time + timedelta(seconds=SECONDS_IN_WORK_DAY)
 
 # Print how far through the day you are in %.
 while True:
-    time.sleep(1)
     progress = (
         ((datetime.now() - work_start_date_time).seconds) * 100 / SECONDS_IN_WORK_DAY
-    )
-    print(
-        f"{progress:.3f} % through the day...",
-        end="\r",
     )
     if progress >= 100:
         # Show a notification (macOS)
@@ -36,4 +32,10 @@ while True:
             os.system(
                 'osascript -e \'display notification "Work day over" with title "Work day over"\''
             )
+        print("\nWORK DAY OVER!!!\n")
         sys.exit()
+    print(
+        f"{progress:.3f} % through the day...",
+        end="\r",
+    )
+    time.sleep(1)
