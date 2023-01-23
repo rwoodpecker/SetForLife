@@ -5,6 +5,7 @@ Would you rather be able to watch the latest episode of some stupid show or have
 """
 
 from decimal import Decimal, InvalidOperation
+
 REGULAR_OPTIONS = ["Y", "y"]
 ONE_OFF_OPTIONS = ["N", "n"]
 annual_returns = 0.0872
@@ -15,12 +16,12 @@ while True:
         regular = input("Is this spend a regular spend, e.g. a subscription (Y/N)? ")
         if regular not in (REGULAR_OPTIONS + ONE_OFF_OPTIONS):
             raise ValueError
-        spend = Decimal(input("How much money am I spending if I spend this much on something: $"))
+        spend = Decimal(input("If I spend this much on something: $"))
         if regular in REGULAR_OPTIONS:
             times_per_year = Decimal(input("This many times per year: "))
             years = int(input("Over this many years: "))
         else:
-            years = int(input("In this many years: "))
+            years = int(input("How much money is that in this many years: "))
     except InvalidOperation or ValueError:
         continue
     break
@@ -29,12 +30,18 @@ future_spend = 0
 if regular in REGULAR_OPTIONS:
     yearly_spend = spend * times_per_year
     for i in range(1, years + 1):
-        future_spend = (future_spend + yearly_spend) * Decimal((1+annual_returns))
-    print(f"${round(future_spend, 2)} in {i} years (${spend * times_per_year * i} without growth)")
-    print(f"You could buy an extra {future_spend/net_income:.2f} years off work ({future_spend*229/net_income:.2f} working days) in {years} years if you just stop buying that!")
+        future_spend = (future_spend + yearly_spend) * Decimal((1 + annual_returns))
+    print(
+        f"${round(future_spend, 2)} in {i} years (${spend * times_per_year * i} without growth)"
+    )
+    print(
+        f"You could buy an extra {future_spend/net_income:.2f} years off work ({future_spend*229/net_income:.2f} working days) in {years} years if you just stop buying that!"
+    )
 
 else:
     for i in range(1, years + 1):
         spend = Decimal(spend * Decimal(1 + annual_returns))
     print(f"Total cost is ${spend:.2f}")
-    print(f"You could buy an extra {spend/net_income:.2f} years off work ({spend*229/net_income:.2f} working days) in {years} years if you just stop buying that!")
+    print(
+        f"You could buy an extra {spend/net_income:.2f} years off work ({spend*229/net_income:.2f} working days) in {years} years if you just stop buying that!"
+    )
